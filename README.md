@@ -96,3 +96,27 @@ JS код поставляется в виде одного файла `player.j
   <div class="js-progress-slider" style="background-color: red;">Прогресс</div>
 </div>
 ```
+
+
+Для удобства отладки можно воспользоваться livereload. Для этого создайте виртуальное окружение:
+
+```commandline
+python3 -m venv env
+```
+
+Войдите в виртуальное окружение командой:
+```commandline
+source env/bin/activate
+```
+
+Установите зависимости командой:
+
+```commandline
+pip install -r requirements.txt
+```
+
+Запустите отладочный сервер командой:
+
+```commandline
+python runserver.py
+```
