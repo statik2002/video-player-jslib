@@ -46,9 +46,6 @@
       height: 40px;
     }
 
-    .time {
-    }
-
     .time-line {
       flex-grow: 5;
       background-color: grey;
@@ -78,6 +75,16 @@
       border-color: white;
       margin-top: -4px;
       margin-left: -4px;
+      transition-property: opacity;
+      transition-timing-function: ease-in;
+      transition: 300ms;
+      opacity: 0.0;
+    }
+
+    .buttons-field:hover .dot {
+      transition-timing-function: ease-in-out;
+      transition: 300ms;
+      opacity: 1.0;
     }
   </style>
 </head>
@@ -92,7 +99,7 @@
         <button class="js-volume-button player-button"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
       </div>
       <div class="times-field">
-        <div class="time">
+        <div>
           <span class="js-current-time"></span>
         </div>
         <div class="time-line">
@@ -105,7 +112,7 @@
             </div>
           </div>
         </div>
-        <div class="time">
+        <div>
           <span class="js-duration"></span>
         </div>
       </div>
