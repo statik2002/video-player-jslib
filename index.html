@@ -4,95 +4,8 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <title>Видео плеер</title>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
-  <script src="player.js"></script>
-  <script src="https://kit.fontawesome.com/33045326ad.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <style>
-    @import "normalize.css";
-
-    .player {
-      width: 800px;
-      height: 600px;
-      box-shadow: 0px 0px 10px 3px black;
-      display: flex;
-      flex-direction: column;
-    }
-    .buttons-field {
-      background-color: black;
-      display: flex;
-      align-items: center;
-    }
-    .video-container {
-      flex-grow: 2;
-      align-items: center;
-    }
-    .player-button {
-      border-style: none;
-      cursor: pointer;
-      color: white;
-      background-color: transparent;
-      font-size: 16px;
-      width: 36px;
-      height: 40px;
-    }
-
-    .player-button:focus {
-      outline: none;
-    }
-
-    .times-field {
-      color: white;
-      display: flex;
-      align-items: center;
-      font-family: Roboto;
-      font-size: 16px;
-      flex-grow: 4;
-      height: 40px;
-    }
-
-    .time-line {
-      flex-grow: 5;
-      background-color: grey;
-      margin: 10px;
-      height: 5px;
-      border-radius: 3px;
-    }
-
-    .time-line-slider {
-      background-color: red;
-      height: 5px;
-      border-radius: 3px;
-    }
-
-    .line-dot {
-      display: flex;
-    }
-
-    .dot {
-      height: 8px;
-      width: 8px;
-      background-color: red;
-      border-radius: 50%;
-      display: inline-block;
-      border-style: solid;
-      border-width: 3px;
-      border-color: white;
-      margin-top: -4px;
-      margin-left: -4px;
-      transition-property: opacity;
-      transition-timing-function: ease-in;
-      transition: 300ms;
-      opacity: 0.0;
-    }
-
-    .buttons-field:hover .dot {
-      transition-timing-function: ease-in-out;
-      transition: 300ms;
-      opacity: 1.0;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="player" class="player">
@@ -108,15 +21,9 @@
         <div>
           <span class="js-current-time"></span>
         </div>
-        <div class="time-line">
-          <div class="js-progress">
-            <div class="line-dot">
-              <div class="js-progress-slider">
-                <div class="time-line-slider"></div>
-              </div>
-              <span class="dot"></span>
-            </div>
-          </div>
+        <div class="js-progress time-line line-dot">
+          <div class="js-progress-slider time-line-slider"></div>
+          <span class="dot"></span>
         </div>
         <div>
           <span class="js-duration"></span>
@@ -127,6 +34,10 @@
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
+  <script src="player.js"></script>
+  <script src="https://kit.fontawesome.com/33045326ad.js" crossorigin="anonymous"></script>
   <script>
     createPlayer({elementId: 'player'});
   </script>
